@@ -1,0 +1,8 @@
+.alerts-fixed
+  uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="alert.close()" ="{{alert.message}}"
+- if flash.any?
+  .container-fluid
+    .row
+      .col-xs-12
+        - flash.each do |type, msg|
+          = alert_box msg, priority: type

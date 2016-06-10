@@ -1,0 +1,11 @@
+= navbar fluid: true, position: :top, inverted: false do
+  = vertical do
+    = link_to '/' do
+      = icon :'futbol-o', library: :font_awesome
+      |  Sfdc login
+  = horizontal do
+    = nav class: 'navbar-left' do
+    = nav class: 'navbar-right' do
+      /- if user.admin?
+        = link_to admin_root_path, target: '_self' do
+          i.fa.fa-cogs

@@ -1,0 +1,48 @@
+@import 'bootstrap'
+@import 'bourbon'
+@import 'font-awesome'
+@import "loading"
+@import "back-to-top"
+@import 'bootstrap/glyphicons'
+@import 'ng-dialog/css/ngDialog'
+@import 'ng-dialog/css/ngDialog-theme-default.min'
+@import 'angular-loading-bar/build/loading-bar.min'
+
+
+#loading-bar .bar
+  height: 3px
+
+@font-face 
+  font-family: 'pfbeau'
+  src: font_url('pfbeausanspro-regular-webfont.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+body
+  font-family: 'pfbeau',Helvetica,Arial,sans-serif
+  height: 100%
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+h3
+  color: #08315c
+
+.alerts-fixed
+  position: fixed
+  top: 70px
+  width: 100%
+  z-index: 1000
+
+.no-scroll::-webkit-scrollbar
+  display: none
+
+.divider
+  height: 1px
+  width: 100%
+  display: block
+  margin: 9px 0
+  overflow: hidden
+  background-color: #e5e5e5

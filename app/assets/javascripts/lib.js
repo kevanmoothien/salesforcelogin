@@ -1,0 +1,11 @@
+//= require ../../../vendor/assets/components/angular/angular.js
+//= require ../../../vendor/assets/components/lodash/lodash.js
+//= require ../../../vendor/assets/components/angular-ui-router/release/angular-ui-router.js
+//= require ../../../vendor/assets/components/angular-bootstrap/ui-bootstrap.js
+//= require ../../../vendor/assets/components/angular-bootstrap/ui-bootstrap-tpls.js
+//= require ../../../vendor/assets/components/angular-touch/angular-touch.js
+//= require ../../../vendor/assets/components/bootstrap-ui-datetime-picker/dist/datetime-picker.min.js
+//= require ../../../vendor/assets/components/ng-dialog/js/ngDialog.js
+//= require ../../../vendor/assets/components/angular-filter/dist/angular-filter.min.js
+//= require ../../../vendor/assets/components/angular-loading-bar/build/loading-bar.min.js
+//= require ../../../vendor/assets/components/angular-animate/angular-animate.min.js
