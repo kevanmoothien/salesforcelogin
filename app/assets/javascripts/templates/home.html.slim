@@ -1,50 +1,54 @@
 .container-fluid
   .row
-    .col-lg-8.col-md-8
+    .col-lg-8.col-md-6.col-sm-6
       .form-horizontal
         .form-group
-          label.col-sm-2.control-label ="Username"
-          .col-sm-10
-            input.form-control type="text" id="inputEmail3" placeholder="Username" ng-model="credential.username"
-          
+          label.col-sm-4.col-md-4.control-label ="Name"
+          .col-sm-8.col-md-8
+            input.form-control type="text" placeholder="Name" ng-model="credential.name"
         .form-group
-          label.col-sm-2.control-label ="Password"
-          .col-sm-10
-            input.form-control type="text" id="inputPassword3" placeholder="Password" ng-model="credential.password"
-
+          label.col-sm-4.col-md-4.control-label ="Username"
+          .col-sm-8.col-md-8
+            input.form-control type="text" placeholder="Username" ng-model="credential.username"
         .form-group
-          label.col-sm-2.control-label ="Security token"
-          .col-sm-10
-            input.form-control type="text" id="inputPassword4" placeholder="Security token" ng-model="credential.password"
-
+          label.col-sm-4.col-md-4.control-label ="Password"
+          .col-sm-8.col-md-8
+            input.form-control type="text" placeholder="Password" ng-model="credential.password"
         .form-group
-          label.col-sm-2.control-label ="Environment"
-          .col-sm-10
+          label.col-sm-4.col-md-4.control-label ="Token"
+          .col-sm-8.col-md-8
+            input.form-control type="text" placeholder="Security token" ng-model="credential.token"
+        .form-group
+          label.col-sm-4.col-md-4.control-label ="Environment"
+          .col-sm-8.col-md-8
             select.form-control ng-model="credential.environment"
-              option ="Production"
-              option ="Sandbox"
-
+              option value="production" ="Production"
+              option value="sandbox" ="Sandbox"
         .form-group
-          .col-sm-offset-2.col-sm-10
+          .col-sm-offset-4.col-sm-10
             button.btn.btn-success ng-click="login()" ="Generate frontdoor access"
-
+            =" "
+            button.btn.btn-success ng-click="save()" ="Save"
         .form-group ng-if="!generating && url != null"
           .col-sm-offset-2.col-sm-10
             a.btn.btn-info target="_blank" href="{{url}}" ="Click here to login"
             br
             textarea style="width: 100%; height: 80px" ="{{url}}"
-
         .form-group ng-if="!generating && error"
           .col-sm-offset-2.col-sm-10
             span ="An error has occurred: {{error_msg}}"
           
-    .col-lg-4.col-md-4
+    .col-lg-4.col-md-6.col-sm-6
       .row
         .col-xs-12.form-horizontal
-          input.form-control style="margin-bottom: 15px" type="text" placeholder="Search login" ng-model="filter"
+          input.form-control.input-sm style="margin-bottom: 15px" type="text" placeholder="Search login" ng-model="filter"
         .col-xs-12.no-scroll style="height: calc(100vh - 120px); overflow: auto;"
           .row ng-repeat="login in logins | filter: filter track by $index"
             .col-xs-12.form-horizontal
+              .form-group-sm
+                label.col-xs-4.control-label ="Project Name"
+                .col-xs-8
+                  input.form-control type="text" ng-model="login.name"
               .form-group-sm
                 label.col-xs-4.control-label ="Username"
                 .col-xs-8
@@ -54,9 +58,9 @@
                 .col-xs-8
                   input.form-control type="password" ng-model="login.password"
               .form-group-sm
-                label.col-xs-4.control-label ="Security token"
+                label.col-xs-4.control-label ="Token"
                 .col-xs-8
-                  input.form-control type="password" ng-model="login.security_token"
+                  input.form-control type="password" ng-model="login.token"
               .form-group-sm
                 label.col-xs-4.control-label ="Environment"
                 .col-xs-8
@@ -65,10 +69,10 @@
                 .col-xs-4
                 .col-xs-8
                   .btn-group
-                    a.btn.btn-success.btn-xs ="Login"
+                    a.btn.btn-success.btn-xs ng-click="set_credential(login)" ="Login"
                     =" "
                     a.btn.btn-info.btn-xs ="Edit"
                     =" "
-                    a.btn.btn-danger.btn-xs ="Delete"
+                    a.btn.btn-danger.btn-xs ng-click="delete(login)" ="Delete"
               .form-group-sm
                 .col-xs-12.divider

@@ -1,3 +1,3 @@
 angular.module('sfdclogin.services', [])
-#= require 'user.coffee'
+#= require 'login.coffee'
 #= require 'alert.coffee'

@@ -11,7 +11,8 @@ angular.module('sfdclogin', [
   'ngDialog',
   'angular.filter',
   'angular-loading-bar',
-  'ngAnimate'
+  'ngAnimate',
+  'LocalStorageModule'
 ])
   .config ($urlRouterProvider)->
     $urlRouterProvider.otherwise('/')
@@ -19,7 +20,8 @@ angular.module('sfdclogin', [
     cfpLoadingBarProvider.includeSpinner = true
     cfpLoadingBarProvider.parentSelector = '#loading-bar-container'
     cfpLoadingBarProvider.spinnerTemplate = '<div class="sk-three-bounce"><div class="sk-child sk-bounce1"><i class="fa fa-futbol-o fa-2x" /></div><div class="sk-child sk-bounce2"><i class="fa fa-futbol-o fa-2x" /></div><div class="sk-child sk-bounce3"><i class="fa fa-futbol-o fa-2x" /></div></div>'
-
+  .config (localStorageServiceProvider)->
+    localStorageServiceProvider.setPrefix('sfdc')
   .directive 'backToTop', ->
     restrict: 'E'
     replace: true
