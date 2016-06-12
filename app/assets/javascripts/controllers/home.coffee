@@ -6,28 +6,36 @@ angular.module('sfdclogin.controllers')
       templateUrl: 'home.html',
       controller: 'homeController'
     })
-  .controller 'homeController', ($scope, $state, Login, localStorageService, Alert)->
+  .controller 'homeController', ($scope, $rootScope, $state, Login, localStorageService, Alert)->
     $scope.credential = new Login({ environment: 'production' })
     $scope.set_credential = (login_value)->
+      resetAlert()
       $scope.output = {}
       $scope.credential = angular.copy login_value
       login(login_value)
     $scope.login = ->
+      resetAlert()
       login($scope.credential)
     $scope.save = ->
+      resetAlert()
       $scope.output = {}
       $scope.logins.push(angular.copy($scope.credential))
     $scope.delete = (item)->
+      resetAlert()
       $scope.output = {}
       index = $scope.logins.indexOf(item)
       $scope.logins.splice(index, 1)
     login = (log)->
+      resetAlert()
       log.login().then( (res)->
         $scope.output = res
       , (error)->
         $scope.output = error
         new Alert('danger', error.error)
       )
+
+    resetAlert = ->
+      $rootScope.alerts.length = 0 
 
 #    logins = [{
 #      name: 'engie test',
