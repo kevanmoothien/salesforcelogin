@@ -8,7 +8,7 @@ html ng-app=yield(:angularapp) lang=I18n.locale
     meta name='description' content='A website for bypassing login verification code'
     meta name="author" content="Kevan"
     meta name='viewport' content='width=device-width, initial-scale=1.0'
-    link rel="image_src" href="favicon.png"
+    meta content="favicon.png" property="og:image"
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
