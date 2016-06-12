@@ -16,7 +16,9 @@ angular.module('sfdclogin.services')
       login: ->
         defer = $q.defer()
         $http.post('/api/v1/logins', info: @payload()).then (res)->
-          console.log res
-          defer.resolve res.data
+          if res.data.status == 200
+            defer.resolve res.data
+          else
+            defer.reject res.data
         defer.promise
     Login

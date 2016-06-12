@@ -15,7 +15,7 @@ angular.module('sfdclogin', [
   'LocalStorageModule'
 ])
   .config ($urlRouterProvider)->
-    $urlRouterProvider.otherwise('/')
+    $urlRouterProvider.otherwise('/login')
   .config (cfpLoadingBarProvider)->
     cfpLoadingBarProvider.includeSpinner = false
   .config (localStorageServiceProvider)->

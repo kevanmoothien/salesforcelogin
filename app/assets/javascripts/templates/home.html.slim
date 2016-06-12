@@ -29,15 +29,11 @@
             button.btn.btn-success ng-click="login()" ="Generate frontdoor access"
             =" "
             button.btn.btn-success ng-click="save()" ="Save"
-        .form-group ng-if="!generating && url != null"
-          .col-sm-offset-2.col-sm-10
-            a.btn.btn-info target="_blank" href="{{url}}" ="Click here to login"
-            br
-            textarea style="width: 100%; height: 80px" ="{{url}}"
-        .form-group ng-if="!generating && error"
-          .col-sm-offset-2.col-sm-10
-            span ="An error has occurred: {{error_msg}}"
-          
+        .form-group ng-if="output.url"
+          label.col-sm-4.col-md-4.control-label = "Login Url"
+          .col-sm-8.col-md-8
+            a ng-href="{{output.url}}" style="word-wrap: break-word" target="_blank" ="{{output.url}}"
+
     .col-lg-4.col-md-6.col-sm-6
       .row
         .col-xs-12.form-horizontal
@@ -70,8 +66,6 @@
                 .col-xs-8
                   .btn-group
                     a.btn.btn-success.btn-xs ng-click="set_credential(login)" ="Login"
-                    =" "
-                    a.btn.btn-info.btn-xs ="Edit"
                     =" "
                     a.btn.btn-danger.btn-xs ng-click="delete(login)" ="Delete"
               .form-group-sm
