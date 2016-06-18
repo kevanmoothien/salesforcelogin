@@ -21,6 +21,8 @@ angular.module('sfdclogin.controllers')
       $scope.output = {}
       $scope.logins.push(angular.copy($scope.credential))
     $scope.delete = (item)->
+      if(!confirm('Are you sure?'))
+        return
       resetAlert()
       $scope.output = {}
       index = $scope.logins.indexOf(item)
