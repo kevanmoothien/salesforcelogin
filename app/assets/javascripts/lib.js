@@ -10,3 +10,5 @@
 //= require ../../../vendor/assets/components/angular-loading-bar/build/loading-bar.min.js
 //= require ../../../vendor/assets/components/angular-animate/angular-animate.min.js
 //= require ../../../vendor/assets/components/angular-local-storage/dist/angular-local-storage.js
+//= require ../../../vendor/assets/components/clipboard/dist/clipboard.min.js
+//= require ../../../vendor/assets/components/ngclipboard/dist/ngclipboard.min.js

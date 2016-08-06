@@ -12,7 +12,8 @@ angular.module('sfdclogin', [
   'angular.filter',
   'angular-loading-bar',
   'ngAnimate',
-  'LocalStorageModule'
+  'LocalStorageModule',
+  'ngclipboard'
 ])
   .config ($urlRouterProvider)->
     $urlRouterProvider.otherwise('/login')
