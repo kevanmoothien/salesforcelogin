@@ -12,3 +12,5 @@
 //= require ../../../vendor/assets/components/angular-local-storage/dist/angular-local-storage.js
 //= require ../../../vendor/assets/components/clipboard/dist/clipboard.min.js
 //= require ../../../vendor/assets/components/ngclipboard/dist/ngclipboard.min.js
+//= require ../../../vendor/assets/components/angular-utf8-base64/angular-utf8-base64.min.js
+

@@ -2,12 +2,16 @@ angular.module('sfdclogin.controllers')
   .config ($stateProvider)->
     $stateProvider
     .state('home', {
-      url: '/login',
+      url: '/login?data',
       templateUrl: 'home.html',
-      controller: 'homeController'
+      controller: 'homeController',
+      resolve:
+        Login: 'Login'
+        login: ($stateParams, Login)->
+          new Login(undefined, $stateParams.data)
     })
-  .controller 'homeController', ($scope, $rootScope, $state, Login, localStorageService, Alert)->
-    $scope.credential = new Login({ environment: 'production' })
+  .controller 'homeController', ($scope, $rootScope, $state, Login, login, localStorageService, Alert)->
+    $scope.credential = login
     $scope.set_credential = (login_value)->
       resetAlert()
       $scope.output = {}
