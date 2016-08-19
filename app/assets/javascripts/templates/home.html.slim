@@ -12,7 +12,7 @@
             .input-group
               input.form-control type="text" placeholder="Username" ng-model="credential.username"
               .input-group-addon
-                a href="" ngclipboard="" data-clipboard-text="{{credential.username}}"
+                a href="" ngclipboard="" ngclipboard-success="copied(e)" data-clipboard-text="{{credential.username}}"
                   i.fa.fa-clipboard.fa-fw
         .form-group
           label.col-sm-4.col-md-4.control-label ="Password"
@@ -20,7 +20,7 @@
             .input-group
               input.form-control type="text" placeholder="Password" ng-model="credential.password"
               .input-group-addon
-                a href="" ngclipboard="" data-clipboard-text="{{credential.password}}"
+                a href="" ngclipboard="" ngclipboard-success="copied(e)" data-clipboard-text="{{credential.password}}"
                   i.fa.fa-clipboard.fa-fw
         .form-group
           label.col-sm-4.col-md-4.control-label ="Token"
@@ -28,7 +28,7 @@
             .input-group
               input.form-control type="text" placeholder="Security token" ng-model="credential.token"
               .input-group-addon
-                a href="" ngclipboard="" data-clipboard-text="{{credential.token}}"
+                a href="" ngclipboard="" ngclipboard-success="copied(e)" data-clipboard-text="{{credential.token}}"
                   i.fa.fa-clipboard.fa-fw
         .form-group
           label.col-sm-4.col-md-4.control-label ="Environment"
@@ -63,7 +63,7 @@
                   .input-group
                     input.form-control type="text" ng-model="login.username"
                     .input-group-addon
-                      a href="" ngclipboard="" data-clipboard-text="{{login.username}}"
+                      a href="" ngclipboard="" ngclipboard-success="copied(e)" data-clipboard-text="{{login.username}}"
                         i.fa.fa-clipboard.fa-fw
               .form-group.form-group-sm
                 label.col-xs-4.control-label ="Password"
@@ -71,7 +71,7 @@
                   .input-group
                     input.form-control type="password" ng-model="login.password"
                     .input-group-addon
-                      a href="" ngclipboard="" data-clipboard-text="{{login.password}}"
+                      a href="" ngclipboard="" ngclipboard-success="copied(e)" data-clipboard-text="{{login.password}}"
                         i.fa.fa-clipboard.fa-fw
               .form-group.form-group-sm
                 label.col-xs-4.control-label ="Token"
@@ -79,7 +79,7 @@
                   .input-group
                     input.form-control type="password" ng-model="login.token"
                     .input-group-addon
-                      a href="" ngclipboard="" data-clipboard-text="{{login.token}}"
+                      a href="" ngclipboard="" ngclipboard-success="copied(e)" data-clipboard-text="{{login.token}}"
                         i.fa.fa-clipboard.fa-fw
               .form-group.form-group-sm
                 label.col-xs-4.control-label ="Environment"
@@ -90,6 +90,6 @@
                 .col-xs-8
                   .btn-group
                     a.btn.btn-success.btn-xs ng-click="set_credential(login)" ="Login"
-                    a.btn.btn-info.btn-xs  ngclipboard="" data-clipboard-text="{{login.url()}}" ="Share"
+                    a.btn.btn-info.btn-xs  ngclipboard="" ngclipboard-success="copied(e)" data-clipboard-text="{{login.url()}}" ="Share"
                     a.btn.btn-danger.btn-xs ng-click="delete(login)" ="Delete"
               .divider

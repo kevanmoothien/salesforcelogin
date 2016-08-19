@@ -37,11 +37,14 @@ angular.module('sfdclogin.controllers')
         $scope.output = res
       , (error)->
         $scope.output = error
-        new Alert('danger', error.error)
+        new Alert('danger', error.error, 5000)
       )
 
     resetAlert = ->
-      $rootScope.alerts.length = 0 
+      $rootScope.alerts.length = 0
+    
+    $scope.copied = (e)->
+      new Alert('info', 'Copied to clipboard', 2000)
 
 #    logins = [{
 #      name: 'engie test',
