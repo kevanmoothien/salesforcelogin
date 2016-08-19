@@ -2,12 +2,16 @@ angular.module('sfdclogin.controllers')
   .config ($stateProvider)->
     $stateProvider
     .state('home', {
-      url: '/login',
+      url: '/login?data',
       templateUrl: 'home.html',
-      controller: 'homeController'
+      controller: 'homeController',
+      resolve:
+        Login: 'Login'
+        login: ($stateParams, Login)->
+          new Login(undefined, $stateParams.data)
     })
-  .controller 'homeController', ($scope, $rootScope, $state, Login, localStorageService, Alert)->
-    $scope.credential = new Login({ environment: 'production' })
+  .controller 'homeController', ($scope, $rootScope, $state, Login, login, localStorageService, Alert)->
+    $scope.credential = login
     $scope.set_credential = (login_value)->
       resetAlert()
       $scope.output = {}
@@ -33,11 +37,14 @@ angular.module('sfdclogin.controllers')
         $scope.output = res
       , (error)->
         $scope.output = error
-        new Alert('danger', error.error)
+        new Alert('danger', error.error, 5000)
       )
 
     resetAlert = ->
-      $rootScope.alerts.length = 0 
+      $rootScope.alerts.length = 0
+    
+    $scope.copied = (e)->
+      new Alert('info', 'Copied to clipboard', 2000)
 
 #    logins = [{
 #      name: 'engie test',
