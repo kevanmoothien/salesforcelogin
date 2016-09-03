@@ -13,4 +13,6 @@
 //= require ../../../vendor/assets/components/clipboard/dist/clipboard.min.js
 //= require ../../../vendor/assets/components/ngclipboard/dist/ngclipboard.min.js
 //= require ../../../vendor/assets/components/angular-utf8-base64/angular-utf8-base64.min.js
+//= require ../../../vendor/assets/components/angulartics/dist/angulartics.min.js
+//= require ../../../vendor/assets/components/angulartics-google-analytics/dist/angulartics-ga.min.js
 

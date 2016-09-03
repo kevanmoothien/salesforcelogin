@@ -11,6 +11,7 @@ html ng-app=yield(:angularapp) lang=I18n.locale
     meta content="favicon.png" property="og:image"
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
+    = javascript_include_tag 'google-analytics'
     = csrf_meta_tags
   body
     = yield :nav
