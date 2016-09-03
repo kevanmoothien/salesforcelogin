@@ -14,7 +14,9 @@ angular.module('sfdclogin', [
   'ngAnimate',
   'LocalStorageModule',
   'ngclipboard',
-  'ab-base64'
+  'ab-base64',
+  'angulartics',
+  'angulartics.google.analytics'
 ])
   .config ($urlRouterProvider)->
     $urlRouterProvider.otherwise('/login')
