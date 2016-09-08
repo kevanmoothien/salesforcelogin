@@ -38,9 +38,11 @@
               option value="sandbox" ="Sandbox"
         .form-group
           .col-sm-offset-4.col-sm-10
-            button.btn.btn-success ng-click="login()" ="Generate frontdoor access"
+            button.btn.btn-primary ng-click="login()" ="Generate access"
             =" "
             button.btn.btn-success ng-click="save()" ="Save"
+            =" "
+            button.btn.btn-warning ng-click="resetField()" ="Reset"
         .form-group ng-if="output.url"
           label.col-sm-4.col-md-4.control-label = "Login Url"
           .col-sm-8.col-md-8
