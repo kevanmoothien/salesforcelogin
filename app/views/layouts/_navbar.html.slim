@@ -5,6 +5,8 @@
       |  Sfdc login
   = horizontal do
     = nav class: 'navbar-left' do
+      li
+        a ui-sref="download" ="Download"
     = nav class: 'navbar-right' do
       /- if user.admin?
         = link_to admin_root_path, target: '_self' do

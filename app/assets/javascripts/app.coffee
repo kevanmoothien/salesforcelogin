@@ -36,3 +36,11 @@ angular.module('sfdclogin', [
           $(element).fadeIn()
       $(element).on 'click', ->
         $('html, body').animate { scrollTop: 0 }, 'fast'
+  .directive 'myDownload', ($compile)->
+    restrict: 'E'
+    scope:
+      getUrlData: '&getData'
+    link: (scope, elm, attrs)->
+      blob = new Blob([scope.getUrlData()], { type: 'application/json' })
+      url = URL.createObjectURL(blob)
+      elm.append($compile("<a class='btn btn-primary' download='backup.json' href='#{url}'>Backup</a>")(scope))
