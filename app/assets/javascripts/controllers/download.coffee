@@ -7,7 +7,6 @@ angular.module('sfdclogin.controllers')
       controller: 'downloadController',
     })
   .controller 'downloadController', ($scope, $rootScope, Login, localStorageService, Alert)->
-    console.log 'test download'
     $scope.logins = []
     logins = localStorageService.get('logins')
     if logins != null
