@@ -43,4 +43,4 @@ angular.module('sfdclogin', [
     link: (scope, elm, attrs)->
       blob = new Blob([scope.getUrlData()], { type: 'application/json' })
       url = URL.createObjectURL(blob)
-      elm.append($compile("<a class='btn btn-primary' download='backup.json' href='#{url}'>Backup</a>")(scope))
+      elm.append($compile("<a class='btn btn-primary' download='backup-#{Date()}.json' href='#{url}'>Backup</a>")(scope))
