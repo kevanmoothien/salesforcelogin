@@ -12,6 +12,18 @@ angular.module('sfdclogin.controllers')
     if logins != null
       _.each logins, (login)->
         $scope.logins.push(new Login(login))
+      $scope.loginsText = JSON.stringify($scope.logins)
     $scope.data = ->
       JSON.stringify($scope.logins)
+    $scope.fileContent = undefined
+    $scope.import = ->
+      $scope.logins = JSON.parse($scope.fileContent)
+      localStorageService.set('logins', $scope.logins)
+      $scope.loginsText = JSON.stringify($scope.logins)
+    $scope.fileNameChanged = (ele)->
+      reader = new FileReader()
+      reader.onload = ->
+        $scope.fileContent = reader.result
+        $scope.$apply()
+      reader.readAsText(ele.files[0])
     
