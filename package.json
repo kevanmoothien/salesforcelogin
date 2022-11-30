@@ -1,5 +1,5 @@
 {
-  "name": "Euro2016",
+  "name": "SalesforceLogin",
   "version": "1.0.0",
   "description": "== README",
   "main": "index.js",
@@ -7,12 +7,12 @@
     "postinstall": "bower install && gulp"
   },
   "engines": {
-    "node": "0.10.33",
-    "npm": "2.1.11"
+    "node": "14.18.2",
+    "yarn": "1.22.18"
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:ombr/scpix.git"
+    "url": "git@bitbucket.org:kevanmoothien/salesforcelogin.git"
   },
   "author": "",
   "license": "ISC",
